@@ -7,10 +7,11 @@ export const Header = () => {
         <Link to="/" className="text-xl font-bold">
           💿Remix
         </Link>
-        <Link to="/posts/create">
-          <a className="text-sm font-medium hover:text-blue-500">
-            [Create post]
-          </a>
+        <Link
+          to="/posts/create"
+          className="text-sm font-medium hover:text-blue-500"
+        >
+          [Create post]
         </Link>
       </div>
     </header>

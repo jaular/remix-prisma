@@ -2,7 +2,6 @@ import type { MetaFunction, ActionFunction } from "@remix-run/node";
 import { redirect } from "@remix-run/node";
 import { useTransition, Form } from "@remix-run/react";
 import { createPost } from "~/models/post.server";
-import { GradientTitle } from "~/components/GradientTitle";
 
 export const meta: MetaFunction = () => ({
   title: "Create post",
@@ -19,9 +18,10 @@ export const action: ActionFunction = async ({ request }) => {
 
 export default function CreatePost() {
   const transition = useTransition();
+  const isSubmitting = transition.state === "submitting";
+
   return (
     <>
-      <GradientTitle text="Create post" />
       <Form
         method="post"
         className="mx-auto mt-8 space-y-6 max-w-none md:max-w-lg"
@@ -52,9 +52,9 @@ export default function CreatePost() {
 
         <button
           type="submit"
-          disabled={transition.state === "submitting"}
-          className={`px-4 py-1.5 bg-gradient-to-r from-blue-700 to-emerald-700 rounded text-sm font-medium ${
-            transition.state === "submitting" ? "disabled:opacity-30" : null
+          disabled={isSubmitting}
+          className={`px-4 py-1.5 bg-gradient-to-r from-blue-700 to-emerald-700 rounded text-sm font-medium${
+            isSubmitting ? " disabled:opacity-30" : ""
           }`}
         >
           Add new post
