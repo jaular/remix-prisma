@@ -1,3 +1,5 @@
+More information: [midulive Youtube](https://www.youtube.com/watch?v=3HQueXL6Bfk)
+
 # Welcome to Remix!
 
 - [Remix Docs](https://remix.run/docs)
