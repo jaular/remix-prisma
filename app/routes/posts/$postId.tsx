@@ -54,8 +54,11 @@ export default function Post() {
 
       <div className="mt-8">
         <Form method="post">
-          <input type="hidden" name="_method" value="delete" />
-          <button className="px-4 py-1.5 bg-gradient-to-r from-blue-700 to-emerald-700 rounded text-sm font-medium">
+          <button
+            name="_method"
+            value="delete"
+            className="px-4 py-1.5 bg-gradient-to-r from-blue-700 to-emerald-700 rounded text-sm font-medium"
+          >
             Delete post
           </button>
         </Form>
